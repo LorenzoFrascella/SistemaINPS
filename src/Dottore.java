@@ -24,7 +24,11 @@ public class Dottore {
     }
 
     public void rimuoviPaziente(String codiceFiscale) {
-        pazienti.removeIf(p -> p.getCodiceFiscale().equals(codiceFiscale));
+        for (Paziente p : pazienti){
+            if(p.getCodiceFiscale().equalsIgnoreCase((codiceFiscale))){
+                pazienti.remove(p);
+            }
+        }
     }
 
     public void modificaOrario(String nuovoOrario) {
@@ -33,19 +37,11 @@ public class Dottore {
 
     public void stampaPazienti() {
         for (Paziente p : pazienti) {
-            System.out.println(p.getNomeCompleto());
+            System.out.println(p.nome + " " + p.cognome);
         }
-    }
-
-    public ArrayList<Paziente> trovaPazientiPerSpecializzazione(String specializzazione) {
-        return this.specializzazione.equalsIgnoreCase(specializzazione) ? pazienti : new ArrayList<>();
     }
 
     public String getIdDottore() {
         return idDottore;
-    }
-
-    public String getNomeCompleto() {
-        return nome + " " + cognome;
     }
 }

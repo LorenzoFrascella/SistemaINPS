@@ -1,4 +1,3 @@
-package PACKAGE_NAME;
-
 public class SistemaINPS {
+    ArrayList <Paziente> pazienti = new ArrayList<>();
 }

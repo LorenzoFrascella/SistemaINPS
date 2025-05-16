@@ -81,7 +81,7 @@ public class Paziente {
         return diagnosi;
     }
 
-    public void setDiagnosi(ArrayList<Diagnosi> diagnosi) {
+    public void aggiungiDiagnosi(ArrayList<Diagnosi> diagnosi) {
         this.diagnosi = diagnosi;
     }
 
